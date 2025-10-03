@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="text-center py-5 bg-light rounded shadow-sm">
+    <h1 class="display-4 fw-bold text-primary">Welcome to <span class="text-danger">Sanrakhya 🚑</span></h1>
+    <p class="lead">Your emergency assistant to find hospitals, check bed availability, and save lives instantly.</p>
+    <a href="/hospital" class="btn btn-danger btn-lg mt-3">
+        <i class="bi bi-hospital"></i> Find Nearest Hospital
+    </a>
+    <a href="/bloodbank" class="btn btn-outline-primary btn-lg mt-3 ms-2">
+        <i class="bi bi-droplet"></i> Search Blood Availability
+    </a>
+</div>
+
+<!-- Features Section -->
+<section class="container mt-5">
+    <div class="row text-center">
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm border-0 h-100">
+                <div class="card-body">
+                    <i class="bi bi-hospital fs-1 text-danger"></i>
+                    <h5 class="card-title mt-3">Nearby Hospitals</h5>
+                    <p class="card-text">Find hospitals in your area quickly during emergencies.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm border-0 h-100">
+                <div class="card-body">
+                    <i class="bi bi-bed fs-1 text-primary"></i>
+                    <h5 class="card-title mt-3">Bed Availability</h5>
+                    <p class="card-text">Check real-time bed and ICU availability before rushing.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm border-0 h-100">
+                <div class="card-body">
+                    <i class="bi bi-droplet-half fs-1 text-success"></i>
+                    <h5 class="card-title mt-3">Blood Banks</h5>
+                    <p class="card-text">Find required blood groups and nearest blood banks instantly.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="text-center my-5">
+    <div class="p-5 bg-primary text-white rounded shadow">
+        <h2 class="fw-bold">Need Help Fast? 💡</h2>
+        <p>Use our AI-powered chatbot to get answers and guidance in seconds.</p>
+        <a href="/chatbot" class="btn btn-light btn-lg">
+            <i class="bi bi-robot"></i> Ask Chatbot
+        </a>
+    </div>
+</section>
+{% endblock %}

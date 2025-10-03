@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4">🩸 Blood Bank</h2>
+    <p class="text-center text-muted">
+        Find available blood donors, check stock availability, and request emergency donations.
+    </p>
+
+    <!-- Search / Request Section -->
+    <div class="card shadow-sm mb-5">
+        <div class="card-body">
+            <h5 class="card-title">Search Blood Availability</h5>
+            <form class="row g-3">
+                <div class="col-md-4">
+                    <label for="bloodType" class="form-label">Blood Group</label>
+                    <select id="bloodType" class="form-select">
+                        <option selected>Choose...</option>
+                        <option>A+</option>
+                        <option>A-</option>
+                        <option>B+</option>
+                        <option>B-</option>
+                        <option>O+</option>
+                        <option>O-</option>
+                        <option>AB+</option>
+                        <option>AB-</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label for="city" class="form-label">City</label>
+                    <input type="text" class="form-control" id="city" placeholder="Enter city">
+                </div>
+                <div class="col-md-4 align-self-end">
+                    <button type="submit" class="btn btn-danger w-100">Search</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Available Blood Banks -->
+    <h4 class="mb-3">Available Blood Banks</h4>
+    <table class="table table-bordered table-hover shadow-sm">
+        <thead class="table-dark">
+            <tr>
+                <th>Blood Bank Name</th>
+                <th>Location</th>
+                <th>Available Groups</th>
+                <th>Contact</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>City Blood Center</td>
+                <td>New Delhi</td>
+                <td>A+, B+, O+</td>
+                <td><a href="tel:+911234567890">📞 1234567890</a></td>
+            </tr>
+            <tr>
+                <td>Red Cross Blood Bank</td>
+                <td>Mumbai</td>
+                <td>O-, AB+</td>
+                <td><a href="tel:+919876543210">📞 9876543210</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Emergency Request -->
+    <div class="alert alert-danger mt-5" role="alert">
+        ⚠️ If you have an **urgent requirement**, please call <strong>+91 1122334455</strong> immediately.
+    </div>
+</div>
+{% endblock %}

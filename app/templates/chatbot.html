@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Sanrakhya Assistant 🤖</h2>
+    <p class="text-center">Ask me about hospitals, blood banks, or emergencies.</p>
+
+    <div class="card shadow p-3">
+        <div id="chat-box" class="border rounded p-3 mb-3" 
+             style="height: 300px; overflow-y: auto; background: #f9f9f9;">
+            <p><b>Bot:</b> Hello! How can I assist you today?</p>
+        </div>
+        <form id="chat-form" class="d-flex">
+            <input type="text" id="user-input" class="form-control me-2" 
+                   placeholder="Type your message...">
+            <button class="btn btn-primary">Send</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    const chatBox = document.getElementById("chat-box");
+    const userInput = document.getElementById("user-input");
+    const sendBtn = document.getElementById("send-btn");
+
+    function appendMessage(sender, message) {
+        chatBox.innerHTML += `<p><b>${sender}:</b> ${message}</p>`;
+        chatBox.scrollTop = chatBox.scrollHeight;
+    }
+
+    sendBtn.addEventListener("click", () => {
+        let userText = userInput.value.trim();
+        if (userText === "") return;
+
+        appendMessage("You", userText);
+        userInput.value = "";
+
+        // Send to Flask backend
+        fetch("/chat", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ message: userText })
+        })
+        .then(res => res.json())
+        .then(data => {
+            appendMessage("Bot", data.reply);
+        })
+        .catch(() => {
+            appendMessage("Bot", "⚠️ Error connecting to server");
+        });
+    });
+</script>
+
+{% endblock %}

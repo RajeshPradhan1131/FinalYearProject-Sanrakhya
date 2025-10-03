@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <h2 class="text-center mb-4">Contact Us 📩</h2>
+            <p class="text-center">Have questions or need help? Get in touch with us.</p>
+
+            <form>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Your Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Your Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea class="form-control" id="message" rows="4" placeholder="Write your message here..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+
+            <hr class="my-5">
+
+            <div class="text-center">
+                <h5>Other Ways to Reach Us 📞</h5>
+                <p>Email: <a href="mailto:support@sanrakhya.com">support@sanrakhya.com</a></p>
+                <p>Phone: +91-9127838942</p>
+                <p>Address: Sanrakhya HQ, Bhubaneswar, India</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

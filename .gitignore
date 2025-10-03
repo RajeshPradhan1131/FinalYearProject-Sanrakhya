@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.log
+
+# Environments
+venv/
+.venv/
+env/
+
+# Local config & secrets
+.env
+instance/
+
+# Databases (keep dev DB out of Git)
+*.db
+*.sqlite3
+*.sqlite
+
+# Byte-compiled / caches
+*.egg-info/
+.pytest_cache/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
